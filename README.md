@@ -9,7 +9,7 @@ Pong running on it:
 
 ## Building & Running
 
-This project now uses CMake with Ninja.
+This project uses CMake with Ninja.
 
 Requirements:
 - CMake 3.16+
