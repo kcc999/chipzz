@@ -71,10 +71,9 @@ int main(int argc, char *argv[]) {
         for (int i = 0; i < instructions_per_frame; i++) chip.step();
     }
 
-
-
     BeginDrawing();
     ClearBackground(BLACK);
+
     for (int y = 0; y < 32; y++) {
       for (int x = 0; x < 64; x++) {
           int index = y * 64 + x;  
@@ -84,12 +83,12 @@ int main(int argc, char *argv[]) {
           }
       }
     }
+
     EndDrawing();
     
   }
 
   CloseWindow();
-
 
   return 0;
 }
