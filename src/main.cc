@@ -1,5 +1,4 @@
-#include "../include/raylib.h"
-#include "../include/raygui.h"
+#include <raylib.h>
 #include "emu.h" 
 
 #include <stdint.h>

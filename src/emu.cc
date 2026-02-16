@@ -1,6 +1,6 @@
 #include "emu.h"
 
-static uint8_t random() {
+static uint8_t random_byte() {
     return static_cast<uint8_t>(rand() % 256);
 }
 
@@ -139,7 +139,7 @@ void Chip::step() {
       inc = false;
       break;
     case 0xC:
-      this->v[x] = random() & nn;
+      this->v[x] = random_byte() & nn;
       break;
     case 0xD: {
       const uint8_t x_pos = this->v[x] % 64;

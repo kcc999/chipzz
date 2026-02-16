@@ -9,13 +9,27 @@ Pong running on it:
 
 ## Building & Running
 
-The repository contains a build.bat script for building on Windows (MSVC), you need to have raylib includes+lib file present on the same directory.
+This project now uses CMake with Ninja.
 
-For building on UNIX systems through gcc or clang, it should be as straight forward as linking with raylib.
+Requirements:
+- CMake 3.16+
+- Ninja
+- raylib (static or shared)
+
+Build:
+
+```console
+foo@bar:~$ cmake -S . -B build -G Ninja
+foo@bar:~$ cmake --build build
+```
+
+The build tries to find raylib in this order:
+1. CMake package (`find_package(raylib CONFIG)`)
+2. `pkg-config` (`raylib.pc`)
+3. Manual system lookup (`/usr`, `/usr/local`, `/opt/homebrew`, `/opt/local`), preferring static library before shared.
 
 Run with:
 
 ```console
-foo@bar:~$ chipzz.exe /path-to-rom
+foo@bar:~$ ./build/chipzz /path-to-rom
 ```
-
